@@ -25,3 +25,15 @@ tasks {
 kotlin {
     jvmToolchain(17)
 }
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["java"])
+        }
+    }
+
+    repositories {
+        mavenLocal()
+    }
+}
